@@ -22,12 +22,16 @@ def writeOutput(maxCells, numCells):
     fp.write('Target Cell Fabien\n{\n  ')
     GIDSet = Set()
     #Write individual cells
-    for i in range(0, numCells):
+    i=0
+    while i<numCells:
+    #for i in range(0, numCells):
         CellGID = generateRandomNum(0, maxCells)
         if (CellGID not in GIDSet):
             GIDSet.add(CellGID)
             s = 'a' + str(CellGID) + ' '
             fp.write(s)
+            i = i+1
+    print 'Size of list: %d\n' %len(GIDSet) 
     fp.write('\n}')
     fp.close()
 
